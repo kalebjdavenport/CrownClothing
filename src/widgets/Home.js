@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import ProductMenu from "../widgets/ProductMenu";
+import ProductMenu from "./ProductMenu";
 
 export default function Homepage() {
   return (

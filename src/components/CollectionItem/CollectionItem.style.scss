@@ -1,0 +1,82 @@
+.container {
+  max-width: 22vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  justify-content: space-between;
+  transform: rotate(-1deg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover .buy {
+    margin-left: 0;
+  }
+  &:hover .title {
+    opacity: 1;
+  }
+
+  &:hover .price {
+    left: -100%;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: cover;
+    position: absolute;
+  }
+
+  .title {
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 0.8rem;
+    margin: 0;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 4px #000000;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .bottom {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .price {
+    padding: 0.5rem 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s;
+  }
+
+  .buy {
+    margin: 0;
+    margin-left: 100%;
+    width: 100%;
+    height: 50px;
+    background-color: blue;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: margin 0.3s;
+    z-index: 1000;
+  }
+}
