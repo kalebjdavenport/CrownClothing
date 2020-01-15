@@ -1,16 +1,20 @@
 import React from "react";
 import "./App.css";
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Home from "./widgets/Home";
 import Shop from "./widgets/shop/Shop";
+import Navigator from "./widgets/MainNav/Navigator";
 
 function App() {
   return (
     <>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/shop" component={Shop} />
+      <Navigator />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/shop" component={Shop} />
+      </Switch>
     </>
   );
 }
