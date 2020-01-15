@@ -1,14 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import ProductCard from './widgets/ProductCard'
+import Homepage from "./navigators/Homepage";
 
 function App() {
   return (
-    <div>
-      Good morning Avengers
-      <ProductCard />
-    </div>
+    <>
+      <Homepage />
+    </>
   );
 }
 
