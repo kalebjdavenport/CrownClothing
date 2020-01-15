@@ -1,18 +1,21 @@
 import React from "react";
 import "../styles/homepage.styles.scss";
+import { withRouter } from "react-router-dom";
 
-const ProductCard = ({ size, title, imgUrl }) => {
+const ProductCard = ({ size, title, imageUrl, history, linkUrl, match }) => {
   return (
-    <div className={`product-card ${size}`}>
+    <div
+      className={`product-card ${size}`}
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
       <div
         className="background-image"
         style={{
-          backgroundImage: `url(${imgUrl})`
+          backgroundImage: `url(${imageUrl})`
         }}
       />
-      {console.log(size)}
-      <div className="product">
-        <h1 className="title">{title}</h1>
+      <div className="product-info">
+        <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">
           Shop <span className="icon">→</span>
         </span>
@@ -21,4 +24,4 @@ const ProductCard = ({ size, title, imgUrl }) => {
   );
 };
 
-export default ProductCard;
+export default withRouter(ProductCard);

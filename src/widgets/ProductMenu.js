@@ -44,24 +44,13 @@ const ProductMenu = () => {
   return (
     <div className="productMenu">
       <div className="row">
-        {productData.slice(0, 3).map(product => (
-          <ProductCard
-            key={product.id}
-            linkUrl={product.linkUrl}
-            imgUrl={product.imageUrl}
-            title={product.title.toUpperCase()}
-          />
+        {productData.slice(0, 3).map(({ id, ...props }) => (
+          <ProductCard key={id} {...props} />
         ))}
       </div>
       <div className="row">
-        {productData.slice(3, 5).map(product => (
-          <ProductCard
-            key={product.id}
-            linkUrl={product.linkUrl}
-            size={product.size}
-            imgUrl={product.imageUrl}
-            title={product.title.toUpperCase()}
-          />
+        {productData.slice(3, 5).map(({ id, ...props }) => (
+          <ProductCard key={id} {...props} />
         ))}
       </div>
     </div>
