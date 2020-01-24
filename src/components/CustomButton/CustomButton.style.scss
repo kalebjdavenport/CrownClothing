@@ -1,19 +1,20 @@
 .customBtn {
   min-width: 165px;
-  width: 12rem;
-  height: 3rem;
+  min-height: 3rem;
   border-radius: 2px;
   letter-spacing: 0.5px;
   line-height: 50px;
   padding: 0 35px 0 35px;
-  font-size: 15px;
+  margin: 2px;
   background-color: black;
   color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
+  font-size: 13px;
   font-weight: bolder;
   border: none;
   cursor: pointer;
+  border: 1px solid black;
 
   &:hover {
     background-color: white;
