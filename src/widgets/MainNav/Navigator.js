@@ -7,7 +7,6 @@ import "./Navigator.style.scss";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 const Navigator = ({ currentUser }) => {
-  console.log(currentUser);
   return (
     <div className="nav">
       <Link to="/" className="logo-container">

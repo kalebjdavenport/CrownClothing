@@ -1,11 +1,12 @@
 .sign-in {
   margin: 2rem;
-  width: 30vw;
+  width: 35vw;
   display: flex;
   flex-direction: column;
 
   .title {
-    margin: 1rem;
+    margin: 1rem 0;
+    text-align: left;
   }
 
   .btn-row {
