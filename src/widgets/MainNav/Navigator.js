@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import "./Navigator.style.scss";
 
+import { connect } from "react-redux";
+
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 const Navigator = ({ currentUser }) => {
@@ -33,4 +35,8 @@ const Navigator = ({ currentUser }) => {
   );
 };
 
-export default Navigator;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(Navigator);
