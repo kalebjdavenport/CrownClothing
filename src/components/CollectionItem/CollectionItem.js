@@ -1,8 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import "./CollectionItem.style.scss";
 
-const CollectionItem = ({ title, price, imageUrl }) => {
+import { addItem } from "../../redux/cart/cart.actions";
+
+const CollectionItem = ({ item }) => {
+  const { title, price, imageUrl } = item;
+
+  const dispatch = useDispatch();
+
   return (
     <div className="container">
       <div
@@ -13,9 +20,11 @@ const CollectionItem = ({ title, price, imageUrl }) => {
       />
       <h1 className="title">{title}</h1>
 
-      <div class="bottom">
+      <div className="bottom">
         <div className="price">${price}</div>
-        <p className="buy">Buy </p>
+        <p className="buy" onClick={() => dispatch(addItem(item))}>
+          Buy
+        </p>
       </div>
     </div>
   );

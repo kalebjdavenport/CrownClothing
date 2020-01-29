@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
@@ -6,9 +6,12 @@ import "./Navigator.style.scss";
 
 import { connect } from "react-redux";
 
+import CartIcon from "../Cart/CartIcon/CartIcon";
+import CartDropdown from "../Cart/CartDropdown/CartDropdown";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 const Navigator = ({ currentUser }) => {
+  const [showCartDropdown, setShowCartDropdown] = useState(false);
   return (
     <div className="nav">
       <Link to="/" className="logo-container">
@@ -30,7 +33,17 @@ const Navigator = ({ currentUser }) => {
             Sign In
           </Link>
         )}
+        <div
+          onClick={() => {
+            console.log(showCartDropdown);
+            setShowCartDropdown(prev => !prev);
+          }}
+          className="nav-icon"
+        >
+          <CartIcon />
+        </div>
       </div>
+      {showCartDropdown && <CartDropdown />}
     </div>
   );
 };

@@ -10,8 +10,8 @@ const ProductCollection = ({ title, items }) => {
     <div>
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
-        {items.slice(0, 4).map(({ name, id, ...props }) => (
-          <CollectionItem title={name} key={id} {...props} />
+        {items.slice(0, 4).map(item => (
+          <CollectionItem title={item.name} key={item.id} item={item} />
         ))}
       </div>
     </div>
