@@ -11,7 +11,11 @@ import { connect } from "react-redux";
 
 import { setCurrentUser } from "./redux/user/user.actions";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+  auth,
+  createUserProfileDocument,
+  addCollectionAndDocuments
+} from "./firebase/firebase.utils";
 
 function App({ setCurrentUser, currentUser }) {
   useEffect(() => {
@@ -27,6 +31,7 @@ function App({ setCurrentUser, currentUser }) {
       } else {
         setCurrentUser(userAuth);
       }
+      addCollectionAndDocuments("collections", [{ a: "b", c: "d" }]);
     });
     return () => unsubscribeFromAuth();
   }, [setCurrentUser]);
