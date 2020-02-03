@@ -6,6 +6,7 @@ import Home from "./widgets/Home";
 import Shop from "./widgets/shop/Shop";
 import Auth from "./widgets/Auth/Auth";
 import Navigator from "./widgets/MainNav/Navigator";
+import Checkout from "./widgets/Checkout/Checkout";
 
 import { connect } from "react-redux";
 
@@ -42,6 +43,7 @@ function App({ setCurrentUser, currentUser }) {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route
           exact
           path="/auth"

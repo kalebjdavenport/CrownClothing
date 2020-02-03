@@ -35,7 +35,6 @@ const Navigator = ({ currentUser }) => {
         )}
         <div
           onClick={() => {
-            console.log(showCartDropdown);
             setShowCartDropdown(prev => !prev);
           }}
           className="nav-icon"
@@ -43,7 +42,9 @@ const Navigator = ({ currentUser }) => {
           <CartIcon />
         </div>
       </div>
-      {showCartDropdown && <CartDropdown />}
+      {showCartDropdown && (
+        <CartDropdown toggleDropdown={setShowCartDropdown} />
+      )}
     </div>
   );
 };
