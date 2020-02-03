@@ -6,6 +6,7 @@
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  font-weight: bold;
 
   .image-container {
     width: 23%;
@@ -19,7 +20,6 @@
   }
   .name {
     font-size: 18px;
-    font-weight: bold;
   }
   .name,
   .quantity,
@@ -28,7 +28,16 @@
   }
 
   .quantity {
+    display: flex;
     padding-left: 20px;
+    font-weight: normal;
+
+    .value {
+      margin: 0 6px;
+    }
+    .arrow {
+      cursor: pointer;
+    }
   }
 
   .remove-button {
